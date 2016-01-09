@@ -1,6 +1,5 @@
 h5 {
   display: inline;
-
 }
 
 article {
@@ -12,4 +11,40 @@ article {
 
 img {
   padding: 25px;
+}
+
+#picofme {
+  border-radius: 50%;
+  height: 175px;
+  width: 175px;
+}
+
+#mainheader {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  margin-left: 20px;
+}
+
+li a{
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  display: inline;
+  padding-bottom: 10px;
+}
+
+li {
+  display: inline;
+}
+
+.projectImages {
+  border-radius: 50%;
+  height: 125px;
+  width: 125px;
 }
