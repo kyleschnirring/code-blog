@@ -15,6 +15,6 @@ myProject.rawData = [
     projectUrl:   'https://itunes.apple.com/us/app/profappltechinc/id713762905?mt=8',
     image: "images/pat.png",
     date: '2013-11-04',
-    body:     "<p>What can I say this was the first app I ever made, I made this for my father-in-laws company. It's not much but hey everyone has to start somewhere.</p>"
+    body:     "<p>What can I say this was the first app, I made this for my father-in-laws company. It's not much but hey everyone has to start somewhere.</p>"
   }
 ];

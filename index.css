@@ -17,6 +17,7 @@ img {
   border-radius: 50%;
   height: 175px;
   width: 175px;
+  display:inline;
 }
 
 #mainheader {
@@ -47,4 +48,12 @@ li {
   border-radius: 50%;
   height: 125px;
   width: 125px;
+}
+
+#aboutMe h2 {
+  display: inline;
+}
+
+#aboutMeP {
+  display: inline;
 }
