@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
@@ -11,27 +12,19 @@
     <main>
         <header id='mainheader'>
           <h1>
-            Kyle Schnirring Blog!
+            Kyle Schnirring Blog! <img id='picofme' src="images/me copy.jpg" alt="">
           </h1>
           <nav>
             <div data-role='navbar'>
               <ul>
-                <li><a href="#articles">Projects | </a></li>
-                <li><a href="#aboutMe">About | </a></li>
-                <li><a href="http://twitter.com/KSchnirring" target="_blank">Twitter | </a></li>
-                <li><a href="http://github.com/kyleschnirring" target="_blank">Github</a></li>
+                <li><button id='homeButton'>Home</button></li>
+                <li><button id='aboutButton'>About</button></li>
+                <li><button id='twitButton'>Twitter</button></li>
+                <li><button id='gitButton'>Github</button></li>
               </ul>
             </div>
           </nav>
         </header>
-        <section id='aboutMe'>
-          <img id='picofme' src="images/me copy.jpg" alt="">
-          <h2>
-            About Me:
-          </h2>
-          <p id='aboutMeP'>My name is Kyle Schnirring. I'm a full stack developer with a serious passion for programming and a individual member of the <a href="https://nodejs.org/en/foundation/">Node.js Foundation</a>. I've been programming for about 5 years as a hobby and just recently decided to take it serious. I'm currently a student at <a href='https://www.codefellows.org'>CodeFellows</a> in Seattle Washington with my main focus on Javascript and full stack development. You can check out some of my work at <a href='https://github.com/kyleschnirring'>Github.com</a>.</p>
- </p>
-        </section>
         <section id="articles">
           <article class="template" data-category="cat">
             <header>
@@ -56,5 +49,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="scripts/myprojects.js"></script>
     <script src='scripts/blog.js'></script>
+    <script src='scripts/menubar.js'></script>
   </body>
 </html>

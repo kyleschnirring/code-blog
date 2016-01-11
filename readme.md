@@ -1,0 +1,1 @@
+I structured my personal blog after what we are doing in class to get the most out of what I'm learning. There is no COPY/PASTE going on I have typed everything with my own two fingers. I also forgot to create a master so I'll be turning in a seperate branch. 

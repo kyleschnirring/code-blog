@@ -2,22 +2,25 @@ h5 {
   display: inline;
 }
 
-article {
-  width:650px;
-  float:center;
-  padding:10px;
-
-}
-
 img {
   padding: 25px;
 }
 
+button {
+  color: white;
+  background-color: black;
+  box-shadow: none;
+  border: none;
+  background: none;
+  outline: none;
+}
+
 #picofme {
   border-radius: 50%;
-  height: 175px;
-  width: 175px;
+  height: 125px;
+  width: 125px;
   display:inline;
+  float:right;
 }
 
 #mainheader {
@@ -45,7 +48,7 @@ li {
 }
 
 .projectImages {
-  border-radius: 50%;
+  border-radius: 20%;
   height: 125px;
   width: 125px;
 }
@@ -55,5 +58,9 @@ li {
 }
 
 #aboutMeP {
+  display: inline;
+}
+
+.template {
   display: inline;
 }

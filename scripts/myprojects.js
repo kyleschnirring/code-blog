@@ -2,7 +2,7 @@ var myProject = {};
 
 myProject.rawData = [
   {
-    title:       '[tattle]',
+    title:       '[TATTLE]',
     author:      'Kyle Schnirring',
     projectUrl:   'http:donttattleonme.com',
     image: "images/tattle.png",
