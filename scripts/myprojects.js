@@ -1,12 +1,13 @@
-var myProject = {};
+var myProjects = {};
 
-myProject.rawData = [
+myProjects.rawData = [
   {
     title:       '[TATTLE]',
     author:      'Kyle Schnirring',
     projectUrl:   'http:donttattleonme.com',
     image: "images/tattle.png",
     date: '2014-11-05',
+    language: 'Objective C',
     body:        '<p>I really dont know what I want to write yet.</p>'
   },
   {
@@ -15,6 +16,16 @@ myProject.rawData = [
     projectUrl:   'https://itunes.apple.com/us/app/profappltechinc/id713762905?mt=8',
     image: "images/pat.png",
     date: '2013-11-04',
+    language: 'Objective C',
     body:     "<p>What can I say this was the first app, I made this for my father-in-laws company. It's not much but hey everyone has to start somewhere.</p>"
+  },
+  {
+    title:       'Fast Photo Copier',
+    author:      'Kyle Schnirring',
+    projectUrl:   'coming soon',
+    image: "",
+    date: '2016-12-04',
+    language: 'Node.js',
+    body:   'Still working on this one'
   }
 ];

@@ -11,6 +11,9 @@ function Project (object) {
 
 Project.prototype.toHtml = function() {
   var $newProject = $('article.template').clone();
+  $newProject.removeClass('template');
+  $newProject.attr('data-language', this.language);
+
   $newProject.find('h1').text(this.title);
   $newProject.find('address').text(this.author);
   $newProject.find('a').attr('href', this.projectUrl).text(this.projectUrl);
@@ -19,15 +22,14 @@ Project.prototype.toHtml = function() {
   $newProject.find('.projectImages').attr('src', this.image);
   $newProject.find('.article-body').html(this.body);
   $newProject.append('<hr>');
-  $newProject.removeClass('template');
   return $newProject;
 }
 
-myProject.rawData.sort(function(a,b) {
+myProjects.rawData.sort(function(a,b) {
   return (new Date(b.date)) - (new Date(a.date));
 });
 
-myProject.rawData.forEach(function(ele) {
+myProjects.rawData.forEach(function(ele) {
   projects.push(new Project(ele));
 })
 
