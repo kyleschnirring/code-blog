@@ -4,37 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog</title>
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
   </head>
   <body>
     <main>
         <header id='mainheader'>
+          <img id='ham' src="images/whiteHam.png">
           <h2>
-            Kyle's Portfolio! <img id='picofme' src="images/me copy.jpg" alt="">
+            Kyle's Portfolio! <img id='picofme' src="images/me copy.jpg" >
           </h2>
-          <nav>
+          <nav class="navbar">
             <div data-role='navbar'>
-              <ul>
+              <ul class='menu-items'>
                 <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="https://www.twitter.com/KSchnirring">Twitter</a></li>
-                <li><a href="https://www.github.com/kyleschnirring">Github</a></li>
+                <li><a href="https://www.twitter.com/KSchnirring" target="_blank">Twitter</a></li>
+                <li><a href="https://www.github.com/kyleschnirring" target="_blank">Github</a></li>
               </ul>
             </div>
           </nav>
         </header>
         <section id="articles">
-          <article class="template" data-category="cat">
+          <select id='category-filter'>
+            <option value="">-- Filter by Technology --</option>
+          </select>
+          <article class="template" data-category="dog">
             <header>
-              <h1>Title</h1>
+              <h4>Title</h4>
               <div class="byline">
                 By <address>Author Name</address>
                 Project Website:<a href=""></a>
-                published <time pubdate datetime="2000-01-01">Publish Time</time>
+                published <time pubdate datetime="2000-01-01"></time>
               </div>
               <img class='projectImages'src="">
             </header>
@@ -42,7 +48,7 @@
           </article>
         </section>
         <section id='about'>
-          
+
         </section>
       </div>
     </main>
@@ -52,8 +58,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="scripts/myprojects.js"></script>
+    <script src='scripts/myprojects.js'></script>
     <script src='scripts/blog.js'></script>
+    <script src='scripts/projectfilter.js'></script>
     <script src='scripts/menubar.js'></script>
   </body>
 </html>

@@ -1,7 +1,33 @@
-$('#button1').on('click', function(e) {
-  $('main').fadeOut('slow', function() {});
+$(function() {
+  var size = $( window ).width();
+    if (size > 960) {
+      $('.menu-items').show();
+      $('#ham').hide();
+    } else {
+      $('.menu-items').hide()
+      $('#ham').show();
+    }
 });
-//es6
-$('#button2').on("click", (e) => {
-  $('main').fadeIn('slow', () => {});
+
+$( window ).on('resize', function() {
+  var size = $( window ).width();
+  if (size >= 960) {
+    $('.menu-items').show();
+    $('#ham').hide();
+  } else {
+    $('.menu-items').hide();
+    $('#ham').show();
+  }
+});
+
+$('#ham').on('click', function() {
+  $('.menu-items').show().css('text-align', 'center');
+
+});
+
+$('#mainheader').on('mouseup', function() {
+  var size = $( window ).width();
+  if (size <= 960) {
+    $('.menu-items').hide();
+  }
 });
