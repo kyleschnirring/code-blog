@@ -2,6 +2,24 @@ h5 {
   display: inline;
 }
 
+#secret {
+  position:fixed;
+  top: 31%;
+  left: 23%;
+  display: none;
+  height: 300px;
+  width: 225px;
+  background-color: black;
+  border-radius: 5%;
+  box-shadow: 7px 7px 5px #888888;
+}
+
+.secretli {
+  display: block;
+  text-align: center;
+  padding-top: 33px;
+}
+
 img {
   padding: 25px;
 }
