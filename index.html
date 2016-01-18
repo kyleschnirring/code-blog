@@ -11,6 +11,19 @@
       rel="stylesheet">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script id="article-template" type="text/x-handlebars-template">
+      <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
+        <header>
+          <h3>{{title}}</h3>
+          <div class="byline">
+            <i>By:</i> <b>{{author}}</b>
+            <i>Released:</i> <b>{{date}}</b><address><i>website:</i><a href="{{projectUrl}}"> {{projectUrl}}</a></address>
+            <img class="projectImages" src="{{image}}">
+          </div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+      </article>
+    </script>
   </head>
   <body>
     <div id='secret' data-role="navbar">
@@ -42,27 +55,20 @@
           <select id='category-filter'>
             <option value="">-- Filter by Technology --</option>
           </select>
-          <article class="template" data-category="dog">
-            <header>
-              <h4>Title</h4>
-              <div class="byline">
-                By <address>Author Name</address>
-                Project Website:<a href=""></a>
-                published <time pubdate datetime="2000-01-01"></time>
-              </div>
-              <img class='projectImages'src="">
-            </header>
-            <section class="article-body"></section>
-          </article>
+          <div class="content-placeholder"></div>
         </section>
         <section id='about'>
-
+          <h2>
+            About Me:
+          </h2>
+          <p class="lead">My name is Kyle Schnirring. I'm a full stack developer with a serious passion for programming and a individual member of the <a href="https://nodejs.org/en/foundation/">Node.js Foundation</a>. I've been programming for about 5 years as a hobby and just recently decided to take it serious. I'm currently a student at <a href='https://www.codefellows.org'>CodeFellows</a> in Seattle Washington with my main focus on Javascript and full stack development. You can check out some of my work at <a href='https://github.com/kyleschnirring'>Github.com</a>. Below are some frameworks and technologies I'm familiar with.<br></p>
         </section>
       </div>
     </main>
     <footer>
       &copy; 2016 Kyle Schnirring
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

@@ -90,14 +90,15 @@ ul {
   width: 125px;
 }
 
-#aboutMe h2 {
+#about h2 {
   display: inline;
-}
-
-#aboutMeP {
-  display: inline;
+  padding: 10px;
 }
 
 .template {
   display: inline;
+}
+
+.lead {
+  padding: 10px;
 }

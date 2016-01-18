@@ -3,6 +3,7 @@ var projects = [];
 function Project (object) {
   this.title = object.title;
   this.author = object.author;
+  this.category = object.category;
   this.date = object.date;
   this.projectUrl = object.projectUrl;
   this.image = object.image;
@@ -10,17 +11,21 @@ function Project (object) {
 }
 
 Project.prototype.toHtml = function() {
-  var $newProject = $('article.template').clone();
-  $newProject.removeClass('template');
-  $newProject.attr('data-category', this.category);
-  $newProject.find('h4').text(this.title);
-  $newProject.find('address').text(this.author);
-  $newProject.find('a').attr('href', this.projectUrl).text(this.projectUrl);
-  $newProject.find('time').html(this.date);
-  $newProject.find('.projectImages').attr('src', this.image);
-  $newProject.find('.article-body').html(this.body);
-  $newProject.append('<hr>');
-  return $newProject;
+  var source = $("#article-template").html();
+  var template = Handlebars.compile(source);
+
+  var context = {
+    "title": this.title,
+    "author": this.author,
+    "projectUrl": this.projectUrl,
+    "category": this.category,
+    "publishedOn": this.date,
+    "image": this.image,
+    "body": this.body
+  };
+
+  $('.content-placeholder').html(template(context));
+   return template(this);
 }
 
 myProjects.rawData.sort(function(a,b) {
