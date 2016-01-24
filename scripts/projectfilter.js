@@ -10,7 +10,7 @@ articleView.populateFilters = function() {
       }
     }
   });
-};
+}
 
 articleView.handleCategoryFilter = function() {
   $('#category-filter').on('change', function() {

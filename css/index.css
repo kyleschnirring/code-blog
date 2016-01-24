@@ -10,7 +10,7 @@ h5 {
   height: 300px;
   width: 225px;
   background-color: black;
-  border-radius: 5%;
+  border-radius: 2.5%;
   box-shadow: 7px 7px 5px #888888;
 }
 
@@ -19,6 +19,7 @@ h5 {
   text-align: center;
   padding-top: 33px;
 }
+
 
 img {
   padding: 25px;
@@ -44,6 +45,7 @@ button {
   width: 200px;
   display:inline;
   float:right;
+  z-index: 100;
 }
 
 #articles {

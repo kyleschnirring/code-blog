@@ -1,12 +1,14 @@
 //IIFE to set stuff up according to sceen size
 $(function() {
   var size = $( window ).width();
-    if (size > 960) {
+    if (size > 610) {
       $('.menu-items').show();
       $('#ham').hide();
+        $('#picofme').height('200px').width('200px');
     } else {
       $('.menu-items').hide()
       $('#ham').show();
+      $('#picofme').height('125px').width('125px');
     }
 });
 
@@ -16,9 +18,11 @@ $( window ).on('resize', function() {
   if (size >= 610) {
     $('.menu-items').show();
     $('#ham').hide();
+    $('#picofme').height('200px').width('200px');
   } else {
     $('.menu-items').hide();
     $('#ham').show();
+    $('#picofme').height('125px').width('125px');
   }
 });
 
