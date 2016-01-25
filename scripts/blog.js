@@ -1,4 +1,3 @@
-var projects = [];
 
 function Project (object) {
   this.title = object.title;
@@ -28,17 +27,34 @@ Project.prototype.toHtml = function() {
    return template(this);
 }
 
-myProjects.rawData.sort(function(a,b) {
-  return (new Date(b.date)) - (new Date(a.date));
-});
+Project.all = [];
 
-myProjects.rawData.forEach(function(ele) {
-  projects.push(new Project(ele));
-})
+Project.loadAll = function(rawData) {
+  rawData.sort(function(a,b) {
+    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+  });
 
-projects.forEach(function(a){
-  $('#articles').append(a.toHtml())
-});
+  rawData.forEach(function(ele) {
+    Project.all.push(new Project(ele));
+  })
+}
+
+Project.fetchAll = function() {
+  if (localStorage.rawData) {
+    Project.loadAll(JSON.parse(localStorage.rawData));
+    articleView.handleMainNav();
+  } else {
+    var json = $.getJSON('/scripts/myprojects.json');
+    json.done(function(response) {
+      var tempData = [];
+      $.each(response, function(key, value){
+        tempData.push(value);
+      });
+      localStorage.setItem('rawData', JSON.stringify(tempData));
+      Project.loadAll(JSON.parse(localStorage.rawData));
+    });
+  }
+}
 
 $(function() {
   $('.template').remove();

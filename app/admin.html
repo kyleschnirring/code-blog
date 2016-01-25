@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog</title>
-    <link rel="stylesheet" href="vendor/styles/normalize.css">
-    <link rel="stylesheet" href="styles/icons.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/modules.css">
-    <link rel="stylesheet" href="vendor/styles/railscasts.css">
-
+    <title>admin</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <script id="article-template" type="text/x-handlebars-template">
       <article
         class="clearfix"
@@ -31,22 +30,19 @@
   <body>
     <header class="site-header clearfix">
       <section class="heading-group-h1 pull-left">
-        <h1>
-          Kilovolt Blog!
-        </h1>
-        <h2>The shocking power of static pages</h2>
+        <h3>
+          Admin
+        </h3>
+        <h4>Enter new project below</h4>
       </section>
       <nav class="main-nav">
         <div class="icon-menu"></div>
-        <ul>
-          <li class="tab" data-content="write"><a href="#" class="icon-home"> Write</a></li>
-          <li class="tab" data-content="articles"><a href="#" class="icon-home"> Preview</a></li>
-        </ul>
+        <button type="button" id='addproject'>ADD+</button>
       </nav>
     </header>
     <main class="clearfix">
       <section id="write" class="tab-content">
-        <h1>New Article</h1>
+        <h5>New Project</h5>
         <form action="#" id="new-form">
           <label>
             <input type="text" id="article-title" placeholder="Article title" required>
@@ -61,9 +57,6 @@
           <label>
             <input type="text" id="article-category" placeholder="Category" required>
           </label>
-          <label>
-            <input type="checkbox" id="article-published"> Published
-          </label>
         </form>
       </section>
       <section id="articles" class="tab-content">
@@ -72,20 +65,16 @@
       <section id="article-export">
         <label id="export-field" for="article-json" class="pull-right">
           <input type="text" readonly id="article-json">
-          When finalized, copy the above JSON, and paste into blogArticles.js
         </label>
       </section>
     </main>
     <footer>
-      &copy; 2015 Code Fellows | Static Blog | Happy Ipsum!
+      &copy; 2016 Code Fellows | Static Blog | Happy Ipsum!
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="scripts/blog.js"></script>
     <script src="scripts/projectfilter.js"></script>
-    <script>
-      articleView.initNewArticlePage();
-    </script>
   </body>
 </html>

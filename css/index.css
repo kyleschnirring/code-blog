@@ -29,6 +29,10 @@ img {
   float: right;
   padding: 10px;
 }
+#addproject {
+  color: white;
+  background-color: red;
+}
 
 button {
   color: white;
