@@ -29,7 +29,7 @@ img {
   float: right;
   padding: 10px;
 }
-#addproject {
+.adminbuttons {
   color: white;
   background-color: red;
 }
@@ -91,6 +91,7 @@ ul {
 }
 
 .projectImages {
+  background-color: grey;
   border-radius: 20%;
   height: 125px;
   width: 125px;

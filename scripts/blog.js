@@ -42,9 +42,8 @@ Project.loadAll = function(rawData) {
 Project.fetchAll = function() {
   if (localStorage.rawData) {
     Project.loadAll(JSON.parse(localStorage.rawData));
-    articleView.handleMainNav();
   } else {
-    var json = $.getJSON('/scripts/myprojects.json');
+    var json = $.getJSON('mykickassprojects');
     json.done(function(response) {
       var tempData = [];
       $.each(response, function(key, value){
@@ -52,10 +51,8 @@ Project.fetchAll = function() {
       });
       localStorage.setItem('rawData', JSON.stringify(tempData));
       Project.loadAll(JSON.parse(localStorage.rawData));
+
     });
   }
 }
-
-$(function() {
-  $('.template').remove();
-});
+$('.template').remove();

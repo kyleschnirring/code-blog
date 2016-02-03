@@ -37,7 +37,8 @@
       </section>
       <nav class="main-nav">
         <div class="icon-menu"></div>
-        <button type="button" id='addproject'>ADD+</button>
+        <button type="button" class='adminbuttons' id='addproject'>Send Data</button>
+        <button type="button" class='adminbuttons'id='newproject'>Create New</button>
       </nav>
     </header>
     <main class="clearfix">
@@ -45,14 +46,17 @@
         <h5>New Project</h5>
         <form action="#" id="new-form">
           <label>
-            <input type="text" id="article-title" placeholder="Article title" required>
+            <input type="text" id="article-title" placeholder="Project Title" required>
+          </label>
+          <label>
+            <input type="text" id="imagePath" placeholder="Path To Image">
           </label>
           <textarea id="article-body" rows="8" cols="40" required></textarea>
           <label>
-            <input type="text" id="article-author" placeholder="Author Name" required>
+            <input type="text" id="article-author" placeholder="Developer Name" required>
           </label>
           <label>
-            <input type="text" id="article-author-url" placeholder="Author's URL" required>
+            <input type="text" id="article-author-url" placeholder="Project URL" required>
           </label>
           <label>
             <input type="text" id="article-category" placeholder="Category" required>

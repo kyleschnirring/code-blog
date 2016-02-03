@@ -1,6 +1,6 @@
-var articleView = {};
+var projectFilter = {};
 
-articleView.populateFilters = function() {
+projectFilter.populateFilters = function() {
   $('article').each(function() {
     if (!$(this).hasClass('template')) {
       var val = $(this).attr('data-category');
@@ -12,7 +12,7 @@ articleView.populateFilters = function() {
   });
 }
 
-articleView.handleCategoryFilter = function() {
+projectFilter.handleCategoryFilter = function() {
   $('#category-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
@@ -24,7 +24,7 @@ articleView.handleCategoryFilter = function() {
   });
 };
 
-articleView.initNewArticlePage = function() {
+projectFilter.initNewArticlePage = function() {
   $('.tab-content').show();
   $('#export-field').hide();
   $('#article-json').on('focus', function(){
@@ -34,7 +34,7 @@ articleView.initNewArticlePage = function() {
   $('#new-form').on('change', 'input, textarea', articleView.create);
 };
 
-articleView.create = function() {
+projectFilter.create = function() {
   var article;
   $('#articles').empty();
 
@@ -63,13 +63,14 @@ $('#addproject').on('click', function(){
   article = new Project({
     title: $('#article-title').val(),
     author: $('#article-author').val(),
-    authorUrl: $('#article-author-url').val(),
+    projectUrl: $('#article-author-url').val(),
     category: $('#article-category').val(),
-    body: $('#article-body').val(),
-    publishedOn: $('#article-published:checked').length ? util.today() : null
+    image: $('#imagePath').val(),
+    date: Date(),
+    body: $('#article-body').val()
   });
 
-  var newPost = JSON.stringify(article) + ',';
+  var newPost = JSON.stringify(article);
 
   $.post("/admin.html", newPost, function (response) {
     var gotIt = response;
@@ -77,16 +78,19 @@ $('#addproject').on('click', function(){
   });
 });
 
+$('#newproject').on('click', function(){
+  document.getElementById('new-form').reset();
+  $('#export-field').html(" ");
+});
 
-articleView.initIndexPage = function() {
+projectFilter.initIndexPage = function() {
   Project.all.forEach(function(a){
-    $('#articles').append(a.toHtml())
+    $('#articles').append(a.toHtml());
+    $('.template').remove();
   });
-
-  articleView.populateFilters();
-  articleView.handleCategoryFilter();
-
+  projectFilter.populateFilters();
+  projectFilter.handleCategoryFilter();
 };
 
-articleView.populateFilters();
-articleView.handleCategoryFilter();
+projectFilter.populateFilters();
+projectFilter.handleCategoryFilter();
