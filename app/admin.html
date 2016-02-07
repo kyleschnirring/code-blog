@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>admin</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script id="article-template" type="text/x-handlebars-template">
+      <article
+        class="clearfix"
+        data-author="{{authorSlug}}"
+        data-category="{{categorySlug}}">
+        <header>
+          <h1>{{title}}</h1>
+          <div class="byline">
+            By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            {{publishStatus}}
+          </div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+      </article>
+    </script>
+    </head>
+  <body>
+    <header class="site-header clearfix">
+      <section class="heading-group-h1 pull-left">
+        <h3>
+          Admin
+        </h3>
+        <h4>Enter new project below</h4>
+      </section>
+      <nav class="main-nav">
+        <div class="icon-menu"></div>
+        <button type="button" class='adminbuttons' id='addproject'>Send Data</button>
+        <button type="button" class='adminbuttons'id='newproject'>Create New</button>
+      </nav>
+    </header>
+    <main class="clearfix">
+      <section id="write" class="tab-content">
+        <h5>New Project</h5>
+        <form action="#" id="new-form">
+          <label>
+            <input type="text" id="article-title" placeholder="Project Title" required>
+          </label>
+          <label>
+            <input type="text" id="imagePath" placeholder="Path To Image">
+          </label>
+          <textarea id="article-body" rows="8" cols="40" required></textarea>
+          <label>
+            <input type="text" id="article-author" placeholder="Developer Name" required>
+          </label>
+          <label>
+            <input type="text" id="article-author-url" placeholder="Project URL" required>
+          </label>
+          <label>
+            <input type="text" id="article-category" placeholder="Category" required>
+          </label>
+        </form>
+      </section>
+      <section id="articles" class="tab-content">
+
+      </section>
+      <section id="article-export">
+        <label id="export-field" for="article-json" class="pull-right">
+          <input type="text" readonly id="article-json">
+        </label>
+      </section>
+    </main>
+    <footer>
+      &copy; 2016 Code Fellows | Static Blog | Happy Ipsum!
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="scripts/blog.js"></script>
+    <script src="scripts/projectfilter.js"></script>
+  </body>
+</html>
