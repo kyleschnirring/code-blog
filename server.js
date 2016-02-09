@@ -6,6 +6,7 @@ var bodyParser = require('body-Parser');
 var Sequalize = require('sequelize');
 var config = require('./config');
 var models = require('./models');
+var hn = require('hack-news');
 var DB = config.DB;
 var PORT = config.PORT;
 
@@ -19,6 +20,11 @@ app.use("/css", express.static(__dirname + '/css'));
 app.use("/scripts", express.static(__dirname + '/scripts'));
 app.use("/images", express.static(__dirname + '/images'));
 app.use("/data", express.static(__dirname + '/data'));
+
+hn.numberOfTopStories(10, (numberOfStories)=> {
+  console.log(numberOfStories);
+});
+
 
 //app routes
 app.get('/', function(request, response) {
