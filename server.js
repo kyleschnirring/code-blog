@@ -60,12 +60,12 @@ app.post("/admin.html", function(request, response, body) {
 
 models.sequelize.sync({force: true}).then(function(x) {
   models.Project.create({
-    title:'hack-news',
-    author:'Kyle Schnirring',
-    projectUrl: 'https://www.npmjs.com/package/hack-news',
-    body:'A library of methods that will help you interact with the Hacker News API.',
-    image:'images/npm.png',
-    category:'Node.js'
+    title:"hack-news",
+    author:"Kyle Schnirring",
+    projectUrl: "https://www.npmjs.com/package/hack-news",
+    body:"A library of methods that will help you interact with the Hacker News API.",
+    image:"images/npm.png",
+    category:"Node.js"
   });
   models.Project.create({
     title:"Fast Photo Copier",
