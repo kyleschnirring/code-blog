@@ -6,6 +6,7 @@ var bodyParser = require('body-Parser');
 var Sequalize = require('sequelize');
 var config = require('./config');
 var models = require('./models');
+var hn = require('hack-news');
 var DB = config.DB;
 var PORT = config.PORT;
 
@@ -19,6 +20,11 @@ app.use("/css", express.static(__dirname + '/css'));
 app.use("/scripts", express.static(__dirname + '/scripts'));
 app.use("/images", express.static(__dirname + '/images'));
 app.use("/data", express.static(__dirname + '/data'));
+
+hn.numberOfTopStories(10, (numberOfStories)=> {
+  console.log(numberOfStories);
+});
+
 
 //app routes
 app.get('/', function(request, response) {
@@ -54,12 +60,12 @@ app.post("/admin.html", function(request, response, body) {
 
 models.sequelize.sync({force: true}).then(function(x) {
   models.Project.create({
-    title:'Hacker News Top Stories',
-    author:'Kyle Schnirring',
-    projectUrl: 'coming soon',
-    body:'Will update and give you the top stories of the day.',
-    image:'images/npm.png',
-    category:'Node.js'
+    title:"hack-news",
+    author:"Kyle Schnirring",
+    projectUrl: "https://www.npmjs.com/package/hack-news",
+    body:"A library of methods that will help you interact with the Hacker News API.",
+    image:"images/npm.png",
+    category:"Node.js"
   });
   models.Project.create({
     title:"Fast Photo Copier",
